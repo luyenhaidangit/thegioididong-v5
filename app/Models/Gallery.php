@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class gallery extends Model
+{
+    use HasFactory;
+    protected $table='gallery';
+    protected $fillable = [
+        'gallery_name',
+        'gallery_image',
+        'product_id'
+    ];
+    protected $primaryKey = 'gallery_id';
+    public function product(){
+        return $this->belongsTo('App\Models\Product', 'product_id','gallery_id');
+    }
+}
