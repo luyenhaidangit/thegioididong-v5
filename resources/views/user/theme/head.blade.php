@@ -4,8 +4,8 @@
 <meta name="author" content="">
 <meta name="keywords" content="MediaCenter, Template, eCommerce">
 <meta name="robots" content="all">
-<title>TLmobile</title>
-<link href="{{asset('public/images/logo.png')}}" rel="shortcut icon" type="image/x-icon" />
+<title>Thegioididong | Hệ thống bán lẻ điện thoại di động, smartphone, máy tính bảng, tablet, laptop, phụ kiện, smartwatch, đồng hồ chính hãng mới nhất, giá tốt, dịch vụ khách ...</title>
+<link rel="shortcut icon" href="{!! asset('admin/assets/images/favicon.ico') !!}">
 <link rel="stylesheet" href="{!! asset('/frontend/assets/css/bootstrap.min.css') !!}">
 <link rel="stylesheet" href="{!! asset('/frontend/assets/css/main.css') !!}">
 <link rel="stylesheet" href="{!! asset('/frontend/assets/css/blue.css') !!}">

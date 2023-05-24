@@ -1,6 +1,5 @@
 @extends('user.theme.layout')
 @section('content')
-{{--    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=617d60966fc5810019e086e6&product=inline-share-buttons" async="async"></script>    <div id="fb-root"></div>--}}
     <script>(function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
@@ -38,7 +37,6 @@
                      data-layout="button_count"
                 style="padding: 10px;line-height: normal;background: rgba(128,128,128,0.15);margin-top: 15px;border-radius: 5px;width: 100%;">
                 </div>
-{{--                <div class="sharethis-inline-share-buttons"></div>--}}
             </div><!-- /.sigin-in-->
         </div>
     </div>

@@ -39,7 +39,7 @@
                     </ul>
                 </div>
                 <div class="clearfix-marquee">
-                    <marquee> CHÀO MỪNG BẠN ĐÃ ĐẾN VỚI TLMOBILE!</marquee>
+                    <marquee> CHÀO MỪNG BẠN ĐÃ ĐẾN VỚI THEGIOIDIDONG!</marquee>
                 </div>
             </div>
             <!-- /.header-top-inner -->
@@ -56,7 +56,7 @@
                     <div class="logo">
                         <a href="{{route('shopping.home')}}">
                             @if(isset($logos))
-                            <img style="max-height: 46px; max-width: 200px" src="{{asset('public/images/'. $logos->logo_image)}}"alt="logo">
+                            <img style="max-height: 46px; max-width: 200px" src="{{asset('images/'. $logos->logo_image)}}"alt="logo">
                             @else
                             @endif
                         </a>
@@ -298,10 +298,10 @@
                                                         </div>
                                                 @endforeach
                                                 <!-- /.col -->
-                                                    <div class="col-xs-12 col-sm-12 col-md-4 col-menu custom-banner"><a
+                                                    {{-- <div class="col-xs-12 col-sm-12 col-md-4 col-menu custom-banner"><a
                                                             href="#"><img alt=""
-                                                                          src="{!! asset('public\frontend\assets\images\banners\img.png') !!}"></a>
-                                                    </div>
+                                                                          src="{!! asset('frontend\assets\images\banners\img.png') !!}"></a>
+                                                    </div> --}}
                                                 </div>
                                                 <!-- /.row -->
                                             </div>
