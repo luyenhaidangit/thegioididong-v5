@@ -9,7 +9,7 @@
                 <div class="blog-post">
                     <div class="blog-post-image">
                         <div class="image" ><a href="{{route('shopping.blog-detail',$firsts->blog_id)}}"><img
-                                    src="{{asset('public/images/'. $blog->image)}}" alt="" style="height: 201px"></a></div>
+                                    src="{{asset('images/'. $blog->image)}}" alt="" style="height: 201px"></a></div>
                     </div>
                     <!-- /.blog-post-image -->
                     <div class="blog-post-info text-left">

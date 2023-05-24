@@ -27,7 +27,7 @@
                 <div class='col-md-3 sidebar'>
                     <div class="sidebar-module-container">
                         <div class="home-banner outer-top-n" style="margin: 0px 0px 30px 0px;">
-                            <img src="{!! asset('public/frontend\assets\images\banners\Thiet-ke-banner-quang-cao-dien-thoai-1.jpg') !!}"
+                            <img src="{!! asset('frontend\assets\images\banners\Thiet-ke-banner-quang-cao-dien-thoai-1.jpg') !!}"
                                  alt="Image">
                         </div>
                         @include('user.page.home.hot_deals.hotdeals')
@@ -45,18 +45,18 @@
                                 <ul id="imageGallery" style="width: 100%">
                                     @if(count($gallerys)>0)
                                         @foreach($gallerys as $key => $gal)
-                                            <li data-thumb="{!! asset('public/frontend/assets/images/gallery/'.$gal->gallery_image) !!}"
-                                                data-src="{!! asset('public/frontend/assets/images/gallery/'.$gal->gallery_image) !!}"
+                                            <li data-thumb="{!! asset('frontend/assets/images/gallery/'.$gal->gallery_image) !!}"
+                                                data-src="{!! asset('frontend/assets/images/gallery/'.$gal->gallery_image) !!}"
                                                 style="width: 100%;padding: 10px;">
                                                 <img style="width: 100%"
-                                                     src="{!! asset('public/frontend/assets/images/gallery/'.$gal->gallery_image) !!}"/>
+                                                     src="{!! asset('frontend/assets/images/gallery/'.$gal->gallery_image) !!}"/>
                                             </li>
                                         @endforeach
                                     @else
-                                        <li data-thumb="{{asset('public/images/'.$products->image)}}"
-                                            data-src="{{asset('public/images/'.$products->image)}}"
+                                        <li data-thumb="{{asset('images/'.$products->image)}}"
+                                            data-src="{{asset('images/'.$products->image)}}"
                                             style="width: 100%;padding: 10px;">
-                                            <img src="{{asset('public/images/'.$products->image)}}"
+                                            <img src="{{asset('images/'.$products->image)}}"
                                                  style="width: 100%"/>
                                         </li>
                                     @endif
@@ -437,11 +437,11 @@
                                             <div class="product-image">
                                                 <div class="image" style="border: 1px solid #e0e4f6;padding: 10px;">
                                                     <a href="{{route('product.viewProduct', $product->id)}}"><img
-                                                            src="{{asset('public/images/'. $product->image)}}"
+                                                            src="{{asset('images/'. $product->image)}}"
                                                             alt=""></a>
                                                     @if($product->qty_inventory==0)
                                                     <div style="position: absolute; top: 2em; right: 3em; width: 60%; background-color: #fff0;">
-                                                        <img src="{{asset('public/images/hethang.png')}}">
+                                                        <img src="{{asset('images/hethang.png')}}">
                                                     </div>
                                                     @else
                                                     @endif

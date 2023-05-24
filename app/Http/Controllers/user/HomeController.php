@@ -24,21 +24,31 @@ class HomeController extends Controller
 {
     //
     public function index(){
-        // Navigation
+        // Logo
         $logos=Logo::first();
+
+        // Category navigation
         $categorys=Category::where('category_status','<>',0)->orderby('category_position','asc')->limit(4)->get();
+
+        // Category sidebar
         $cate=Category::orderby('category_position','asc')
             ->join('product','category.category_id','=','product.idcat')
             ->join('brands','product.brand_id','=','brands.brand_id')
-            ->whereBetween('category_position',[1,10])
+            ->whereBetween('category_position',[0,10])
             ->get();
 
-        //Home
-        $hot_deals=DB::table('product')->where('status','=',3)->orderby('discount','desc')->get();
+        //Hot deal
+        $hot_deals = DB::table('product')
+                ->selectRaw('*, (discount / price) * 100 AS discount_percent')
+                ->where('status', '=', 1)
+                ->orderBy('discount_percent', 'desc')
+                ->limit(3)
+                ->get();
+
 
         $dong_ho=Product::join('category','category.category_id','=','product.idcat')
             ->where('product.status','<>',0)
-            ->where('category.category_name','like','%'.'đồng hồ'.'%')
+            ->where('category.category_name','like','%'.'điện thoại'.'%')
             ->orderby('view_number','desc')->limit(30)->get();
 
         $product_tag=Product::where('status','<>',0)->orderby('view_number','desc')->limit(8)->get();

@@ -347,7 +347,8 @@ class ProductController extends Controller
         $products = Product::find($id);
           $url = $products->link;
           preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
-          $youtube_id = $match[1];
+        //   $youtube_id = $match[1];
+          $youtube_id = null;
         $view=$products->view_number;
         $products->update(['view_number' => $view+1]);
         $gallerys=DB::table('gallery')->where('product_id','=',$id)->get();

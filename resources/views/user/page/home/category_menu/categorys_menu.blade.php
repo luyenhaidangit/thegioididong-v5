@@ -7,9 +7,9 @@
                     <a href="" class="dropdown-toggle"
                        data-toggle="dropdown">
                         @if($category->category_icon!=null)
-                            <i class="{{$category->category_icon}}" aria-hidden="true"></i>
+                            <i class="{{$category->category_icon}}" style="margin-right: 12px" aria-hidden="true"></i>
                         @else
-                            <i class="icon fa fa-paw" aria-hidden="true"></i>
+                            <i class="icon fa fa-paw" style="margin-right: 12px" aria-hidden="true"></i>
                         @endif
                         {{$category->category_name}}
                     </a>

@@ -3,7 +3,7 @@
         @foreach($employee as $emp)
             @if($emp->status == '1')
                 <div class="item">
-                    <div class="avatar"><img src="{!!asset('public/images/'. $emp->image)!!}" alt="Image"></div>
+                    <div class="avatar"><img src="{!!asset('images/'. $emp->image)!!}" alt="Image"></div>
                     <div class="testimonials"><em>"</em>{!! $emp->description !!} <em>"</em></div>
                     <div class="clients_author">{!! $emp->name !!}
                         <span>

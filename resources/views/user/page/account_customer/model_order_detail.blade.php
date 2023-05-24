@@ -24,7 +24,7 @@
                         @foreach($order_detail->where('order_id','=',$ord->order_id) as $ord_detail)
                         <tr>
                             <td style="padding: 10px 15px;border: 1px solid #c4d8ec;text-align: center;">
-                                <img src="{{asset('public/images/'. $ord_detail->image)}}" style="max-width: 50px;">
+                                <img src="{{asset('images/'. $ord_detail->image)}}" style="max-width: 50px;">
                             </td>
                             <td style="padding: 10px 15px;border: 1px solid #c4d8ec;"> {{$ord_detail->name}}
                                 <strong>

@@ -3,7 +3,7 @@
         @foreach($sliders as $slider)
             @if($slider->status == '1')
             @if($slider->slider_title_button)
-                <div class="item" style="background-image: url({!!asset('public/images/'. $slider->image) !!});">
+                <div class="item" style="background-image: url({!!asset('images/'. $slider->image) !!});">
                     <div class="container-fluid">
                         <div class="caption bg-color vertical-center text-left" style="text-align: center;">
                             <div class="slider-header fadeInDown-1">{{($slider->slider_small_title)}}</div>

@@ -7,11 +7,11 @@
                     <div class="hot-deal-wrapper">
                         <div class="image">
                             <a href="{{route('product.viewProduct', $product->id)}}">
-                                <img src="{!!asset('public/images/'. $product->image)!!}" alt="">
+                                <img src="{!!asset('images/'. $product->image)!!}" alt="">
                             </a>
                             @if($product->qty_inventory==0)
                                 <div style="position: absolute; top: 4em; right: 4em; width: 60%; background-color: #fff0;">
-                                    <img src="{{asset('public/images/hethang.png')}}">
+                                    <img src="{{asset('images/hethang.png')}}">
                                 </div>
                             @else
                             @endif

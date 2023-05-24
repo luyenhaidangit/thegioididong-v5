@@ -18,16 +18,8 @@ use Session;
 
 class ProductController extends Controller
 {
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public $viewprefix;
-
     public $viewnamespace;
-
     public function __construct()
     {
         $this->middleware('CheckAdminLogin');
@@ -35,6 +27,7 @@ class ProductController extends Controller
         $this->viewnamespace = 'panel/product';
     }
 
+    // Product view
     public function index()
     {
         $categorys = Category::all();
@@ -42,9 +35,9 @@ class ProductController extends Controller
         $import=Import::get();
 
         return view($this->viewprefix.'index', compact('products', 'categorys','import'));
-
     }
 
+    // Create view
     public function create()
     {
         $brands=Brand::all();
@@ -52,6 +45,7 @@ class ProductController extends Controller
         return view($this->viewprefix.'create', compact('categorys','brands'));
     }
 
+    // Create
     public function store(Request $request): \Illuminate\Http\RedirectResponse
     {
         $product = new Product;
@@ -75,6 +69,7 @@ class ProductController extends Controller
         }else{
             $product->discount = $request->discount;
         }
+        
         $product->content = $request->product_content;
         $product->describe = $request->describe;
         $product->status = $request->status;
@@ -134,6 +129,7 @@ class ProductController extends Controller
         return redirect()->route('product.index');
     }
 
+    // Upload image
     public function imageUpload(Request $request)
     {
         if ($request->hasFile('image')) {
@@ -157,25 +153,7 @@ class ProductController extends Controller
         return '';
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Edit view
     public function edit(Product $product)
     {
         $brands=Brand::all();
@@ -184,14 +162,7 @@ class ProductController extends Controller
         return view('admin.product.edit', compact('product', 'categorys','brands'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Edit
     public function update(Request $request, Product $product)
     {
         if($request->image===null){
@@ -271,13 +242,7 @@ class ProductController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Product  $product
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Delete
     public function destroy(Product $product)
     {
             $product_id=$product->id;
@@ -299,7 +264,6 @@ class ProductController extends Controller
             }else{
                 return redirect()->route('product.index')->with('error','Không thể xóa sản phẩm này!');
             }
-
     }
 
     public function viewUploads()
@@ -308,6 +272,7 @@ class ProductController extends Controller
         return view('view_uploads')->with('images', $images1);
     }
 
+    // Change status
   public function changestatusproduct($id) {
     $product = Product::find($id);
     $product->status = !$product->status;

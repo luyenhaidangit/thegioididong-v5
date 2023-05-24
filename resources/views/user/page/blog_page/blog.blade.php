@@ -19,7 +19,7 @@
                         @foreach($blogs as $blog)
                             <div class="blog-post outer-top-bd  wow fadeInUp" style="margin-top: 0px;margin-bottom: 30px;">
                                 <a href="{{route('shopping.blog-detail',$blog->blog_id)}}"><img class="img-responsive"
-                                                                                          src="{!!asset('public/images/'. $blog->image) !!}"
+                                                                                          src="{!!asset('images/'. $blog->image) !!}"
                                                                                           alt=""></a>
                                 <h1>
                                     <a href="{{route('shopping.blog-detail',$blog->blog_id)}}">{!! $blog->blog_title !!}</a>

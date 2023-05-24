@@ -49,8 +49,8 @@ Route::group(['middleware' => 'CheckAdminLogin','prefix' => 'panel/user', 'names
 
 });
 
-Route::resource('panel/product', admin\ProductController::class);
-Route::resource('panel/category', admin\CategoryController::class);
+
+
 Route::resource('panel/customer', admin\AccountcustomerController::class);
 Route::resource('panel/order', admin\OrderController::class);
 Route::get('panel/delete/{order_id}', 'admin\OrderController@delete_order')->name('admin.delete');
@@ -60,7 +60,7 @@ Route::resource('panel/contact', admin\ContactController::class);
 Route::resource('panel/filemanager', admin\FilemanagerController::class);
 Route::resource('panel/coupon', admin\CouponController::class);
 Route::resource('panel/delivery', admin\DeliveryController::class);
-Route::resource('panel/brand',admin\BrandController::class);
+
 
 Route::resource('panel/dashboard',admin\DashboardController::class);
 Route::resource('panel/empcategory',admin\EmpcategoryController::class);
@@ -78,20 +78,26 @@ Route::resource('panel/blog', admin\BlogController::class);
 Route::resource('panel/faq', admin\FaqController::class);
 Route::resource('panel/logo',admin\LogoController::class);
 Route::resource('panel/slider', admin\SliderController::class);
+Route::resource('panel/product', admin\ProductController::class);
+Route::resource('panel/category', admin\CategoryController::class);
+Route::resource('panel/brand',admin\BrandController::class);
+
+
 
 Route::group(['prefix' => 'panel', 'namespace' => 'admin'], function () {
     Route::post('update-delivery','DeliveryController@update_delivery')->name('update-delivery');
     Route::post('select-delivery','DeliveryController@select_delivery')->name('select-delivery');
     Route::post('insert-delivery','DeliveryController@insert_delivery')->name('insert');
-    Route::get('category/productlist/{id}', 'CategoryController@productlist')->name('category.productlist');
+    
     Route::get('add-gallery/{id}', 'GalleryController@add_gallery')->name('add-gallery');
     Route::post('select-gallery', 'GalleryController@select_gallery')->name('select-gallery');
     Route::post('insert-gallery/{id}', 'GalleryController@insert_gallery')->name('insert-gallery');
     Route::post('update-gallery', 'GalleryController@update_gallery')->name('update-gallery');
     Route::post('delete-gallery', 'GalleryController@delete_gallery')->name('delete-gallery');
-
     Route::get('chi-tiet-hoa-don/{id}','OrderController@view_order_detail')->name('chi-tiet-hoa-don');
     Route::get('huy-don-hang/{id}','OrderController@order_status')->name('admin.delete-order');
+
+    Route::get('category/productlist/{id}', 'CategoryController@productlist')->name('category.productlist');
 });
 
 Route::get('panel/category/productlist/{id}','admin\CategoryController@productlist')->name('category.productlist');

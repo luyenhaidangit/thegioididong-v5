@@ -32,7 +32,7 @@
                                         <div class="product-image">
                                             <div class="image" style="margin: 10px;"><a
                                                     href="{{route('shopping.viewProduct', $product->id)}}"><img
-                                                        src="{{asset('public/images/'. $product->image)}}" alt=""
+                                                        src="{{asset('images/'. $product->image)}}" alt=""
                                                         style="height: auto;"></a></div>
                                             <!-- /.image -->
                                             @if(($product->discount*100)/$product->price <=0)
@@ -119,7 +119,7 @@
                                             <div class="product-image">
                                                 <div class="image" style="margin: 10px;"><a
                                                         href="{{route('shopping.viewProduct', $product->id)}}"><img
-                                                            src="{{asset('public/images/'. $product->image)}}" alt=""
+                                                            src="{{asset('images/'. $product->image)}}" alt=""
                                                             style="height: auto;"></a></div>
                                                 <!-- /.image -->
                                                 @if(($product->discount*100)/$product->price <=0)

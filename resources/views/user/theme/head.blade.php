@@ -32,6 +32,8 @@
       rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
+<link href="{!! asset('admin/assets/css/icons.min.css') !!}" rel="stylesheet" type="text/css">
+
 {{--<style>--}}
 
 {{--    --}}

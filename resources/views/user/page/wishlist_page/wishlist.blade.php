@@ -31,7 +31,7 @@
                                 <tbody>
                                 @foreach($wishlists as $row )
                                 <tr style="border-top: 1px solid #ddd;">
-                                    <td class="col-md-2"><img src="{{asset('public/images/'. $row->product->image)}}" alt="imga"></td>
+                                    <td class="col-md-2"><img src="{{asset('images/'. $row->product->image)}}" alt="imga"></td>
                                     <td class="col-md-7">
                                         <div class="product-name"><a href="{{route('product.viewProduct', $row->product->id)}}">{{$row->product->name}}</a></div>
                                         <?php

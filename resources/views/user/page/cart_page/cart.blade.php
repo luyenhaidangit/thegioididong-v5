@@ -35,7 +35,7 @@
                                         <tr style="border-bottom: 1px solid #e0e4f6;">
                                             <td class="cart-image">
                                                 <a class="entry-thumbnail" href="{{route('product.viewProduct', $item['productInfo']->id)}}">
-                                                    <img src="{{asset('public/images/'.$item['productInfo']->image)}}"
+                                                    <img src="{{asset('images/'.$item['productInfo']->image)}}"
                                                          alt="">
                                                 </a>
                                             </td>

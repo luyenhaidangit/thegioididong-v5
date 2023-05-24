@@ -68,9 +68,9 @@
                     <div class="user-heading round" style="background: #157ed2;">
                         <a href="#">
                             @if($accountcustomer->image!=null)
-                                <img src="{{asset('public/images/'. $accountcustomer->image)}}" alt="">
+                                <img src="{{asset('images/'. $accountcustomer->image)}}" alt="">
                             @else
-                                <img src="{{asset('public/images/avatar-mac-dinh-1.png')}}" alt="">
+                                <img src="{{asset('images/avatar-mac-dinh-1.png')}}" alt="">
                             @endif
                         </a>
                         <h1>{{$accountcustomer->name}}</h1>

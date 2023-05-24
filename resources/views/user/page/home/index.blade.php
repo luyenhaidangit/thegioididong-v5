@@ -46,7 +46,7 @@
                 @include('user.page.employee.testimonials')
                 <!-- ============================================== Testimonials: END ============================================== -->
 
-                    <div class="home-banner"><img src="{{asset('public/frontend/assets\images\banners\mau-thiet-ke-giam-gia-iphone.jpg')}}" alt="Image"></div>
+                    <div class="home-banner"><img src="{{asset('frontend/assets\images\banners\mau-thiet-ke-giam-gia-iphone.jpg')}}" alt="Image"></div>
 
                     <!-- /.sidemenu-holder -->
                     <!-- ============================================== SIDEBAR : END ============================================== -->

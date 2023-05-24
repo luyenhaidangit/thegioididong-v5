@@ -51,7 +51,7 @@
                     @foreach($pho_bien as $blog)
                         @if($blog->status == '1')
                     <div class="blog-post inner-bottom-30 ">
-                        <img class="img-responsive" src="{{asset('public/images/'.$blog->image)}}"
+                        <img class="img-responsive" src="{{asset('images/'.$blog->image)}}"
                              alt="">
                         <h5><a href="{{route('shopping.blog-detail',$blog->blog_id)}}">{{$blog->blog_title}}</a></h5>
                         <span class="review">{{$blog->view}} lượt xem</span>
@@ -66,7 +66,7 @@
                     @foreach($moi_nhat as $blog)
                         @if($blog->status == '1')
                             <div class="blog-post inner-bottom-30">
-                        <img class="img-responsive" src="{{asset('public/images/'.$blog->image)}}"
+                        <img class="img-responsive" src="{{asset('images/'.$blog->image)}}"
                              alt="">
                         <h4><a href="{{route('shopping.blog-detail',$blog->blog_id)}}">{{$blog->blog_title}}</a></h4>
                         <span class="review">{{$blog->view}} lượt xem</span>

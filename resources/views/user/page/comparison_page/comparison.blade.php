@@ -31,7 +31,7 @@
                                         <div class="product-image">
                                             <div class="image">
                                                 <a href="{{route('product.viewProduct', $col->product_id)}}">
-                                                    <img alt="" src="{{asset('public/images/'. $col->product->image)}}">
+                                                    <img alt="" src="{{asset('images/'. $col->product->image)}}">
                                                 </a>
                                             </div>
 
