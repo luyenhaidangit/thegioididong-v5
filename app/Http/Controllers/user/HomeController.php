@@ -24,7 +24,7 @@ class HomeController extends Controller
 {
     //
     public function index(){
-        //chung
+        // Navigation
         $logos=Logo::first();
         $categorys=Category::where('category_status','<>',0)->orderby('category_position','asc')->limit(4)->get();
         $cate=Category::orderby('category_position','asc')
@@ -32,19 +32,25 @@ class HomeController extends Controller
             ->join('brands','product.brand_id','=','brands.brand_id')
             ->whereBetween('category_position',[1,10])
             ->get();
-        //trang-chu
+
+        //Home
         $hot_deals=DB::table('product')->where('status','=',3)->orderby('discount','desc')->get();
+
         $dong_ho=Product::join('category','category.category_id','=','product.idcat')
             ->where('product.status','<>',0)
             ->where('category.category_name','like','%'.'đồng hồ'.'%')
             ->orderby('view_number','desc')->limit(30)->get();
+
         $product_tag=Product::where('status','<>',0)->orderby('view_number','desc')->limit(8)->get();
+
         $old_phone=Product::join('category','category.category_id','=','product.idcat')
             ->where('product.status','<>',0)
             ->where('category.category_name','like','%'.'cũ'.'%')
             ->orderby('view_number','desc')->limit(30)->get();
 
+        // Slide
         $sliders = Slider::all();
+
         $products = Product::where('status','<>',0)->orderby('id','desc')->limit(30)->get();
         $featured_phone=Product::join('category','category.category_id','=','product.idcat')
             ->where('product.status','<>',0)

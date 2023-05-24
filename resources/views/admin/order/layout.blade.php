@@ -7,11 +7,11 @@
 {{--    <meta name="description" content="">--}}
 {{--    <meta name="author" content="">--}}
 {{--    <title>SB Admin 2 - Dashboard</title>--}}
-{{--    <link href="{!! asset('public\admin/vendor/fontawesome-free/css/all.min.css') !!}" rel="stylesheet" type="text/css">--}}
+{{--    <link href="{!! asset('admin/vendor/fontawesome-free/css/all.min.css') !!}" rel="stylesheet" type="text/css">--}}
 {{--    <link--}}
 {{--        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"--}}
 {{--        rel="stylesheet">--}}
-{{--    <link href="{!! asset('public\admin/css/sb-admin-2.min.css') !!}" rel="stylesheet">--}}
+{{--    <link href="{!! asset('admin/css/sb-admin-2.min.css') !!}" rel="stylesheet">--}}
 {{--</head>--}}
 {{--<body id="page-top">--}}
 {{--    <div id="wrapper">--}}
@@ -32,13 +32,13 @@
 {{--    --}}
 {{--  </body>--}}
 {{--</html>--}}
-{{--<script src="{!! asset('public\admin/vendor/jquery/jquery.min.js') !!}"></script>--}}
-{{--  <script src="{!! asset('public\admin/vendor/bootstrap/js/bootstrap.bundle.min.js') !!}"></script>--}}
-{{--  <script src="{!! asset('public\admin/vendor/jquery-easing/jquery.easing.min.js') !!}"></script>--}}
-{{--  <script src="{!! asset('public\admin/js/sb-admin-2.min.js') !!}"></script>--}}
-{{--  <script src="{!! asset('public\admin/vendor/chart.js/Chart.min.js') !!}"></script>--}}
-{{--  <script src="{!! asset('public\admin/js/demo/chart-area-demo.js') !!}"></script>--}}
-{{--  <script src="{!! asset('public\admin/js/demo/chart-pie-demo.js') !!}"></script>--}}
+{{--<script src="{!! asset('admin/vendor/jquery/jquery.min.js') !!}"></script>--}}
+{{--  <script src="{!! asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') !!}"></script>--}}
+{{--  <script src="{!! asset('admin/vendor/jquery-easing/jquery.easing.min.js') !!}"></script>--}}
+{{--  <script src="{!! asset('admin/js/sb-admin-2.min.js') !!}"></script>--}}
+{{--  <script src="{!! asset('admin/vendor/chart.js/Chart.min.js') !!}"></script>--}}
+{{--  <script src="{!! asset('admin/js/demo/chart-area-demo.js') !!}"></script>--}}
+{{--  <script src="{!! asset('admin/js/demo/chart-pie-demo.js') !!}"></script>--}}
 {{--    --}}
 
         <!DOCTYPE html>
@@ -52,19 +52,19 @@
     <meta content="Coderthemes" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{!! asset('public\admin/assets/images/favicon.ico') !!}">
+    <link rel="shortcut icon" href="{!! asset('admin/assets/images/favicon.ico') !!}">
 
     <!-- third party css -->
-    <link href="{!! asset('public\admin/assets/libs/datatables/dataTables.bootstrap4.min.css') !!}" rel="stylesheet" type="text/css">
-    <link href="{!! asset('public\admin/assets/libs/datatables/buttons.bootstrap4.min.css') !!}" rel="stylesheet" type="text/css">
-    <link href="{!! asset('public\admin/assets/libs/datatables/responsive.bootstrap4.min.css') !!}" rel="stylesheet" type="text/css">
-    <link href="{!! asset('public\admin/assets/libs/datatables/select.bootstrap4.min.css') !!}" rel="stylesheet" type="text/css">
+    <link href="{!! asset('admin/assets/libs/datatables/dataTables.bootstrap4.min.css') !!}" rel="stylesheet" type="text/css">
+    <link href="{!! asset('admin/assets/libs/datatables/buttons.bootstrap4.min.css') !!}" rel="stylesheet" type="text/css">
+    <link href="{!! asset('admin/assets/libs/datatables/responsive.bootstrap4.min.css') !!}" rel="stylesheet" type="text/css">
+    <link href="{!! asset('admin/assets/libs/datatables/select.bootstrap4.min.css') !!}" rel="stylesheet" type="text/css">
 
     <!-- App css -->
-    <link href="{!! asset('public\admin/assets/css/bootstrap.min.css') !!}" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">
-    <link href="{!! asset('public\admin/assets/css/icons.min.css') !!}" rel="stylesheet" type="text/css">
-    <link href="{!! asset('public\admin/assets/css/app.min.css') !!}" rel="stylesheet" type="text/css" id="app-stylesheet">
-    <script src="{!! asset('public\admin/ckeditor/ckeditor.js') !!}"></script>
+    <link href="{!! asset('admin/assets/css/bootstrap.min.css') !!}" rel="stylesheet" type="text/css" id="bootstrap-stylesheet">
+    <link href="{!! asset('admin/assets/css/icons.min.css') !!}" rel="stylesheet" type="text/css">
+    <link href="{!! asset('admin/assets/css/app.min.css') !!}" rel="stylesheet" type="text/css" id="app-stylesheet">
+    <script src="{!! asset('admin/ckeditor/ckeditor.js') !!}"></script>
 
 </head>
 
@@ -133,7 +133,7 @@
                 <strong>Customize </strong> the overall color scheme, layout, etc.
             </div>
             <div class="mb-2">
-                <img src="{!! asset('public\admin/assets/images/layouts/light.png') !!}" class="img-fluid img-thumbnail" alt="">
+                <img src="{!! asset('admin/assets/images/layouts/light.png') !!}" class="img-fluid img-thumbnail" alt="">
             </div>
             <div class="custom-control custom-switch mb-3">
                 <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked="">
@@ -141,10 +141,10 @@
             </div>
 
             <div class="mb-2">
-                <img src="{!! asset('public\admin/assets/images/layouts/dark.png') !!}" class="img-fluid img-thumbnail" alt="">
+                <img src="{!! asset('admin/assets/images/layouts/dark.png') !!}" class="img-fluid img-thumbnail" alt="">
             </div>
             <div class="custom-control custom-switch mb-3">
-                <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsstyle="{!!asset(' admin/assets/css/bootstrap-dark.min.css') !!}" data-appstyle="{!! asset('public\admin/assets/css/app-dark.min.css') !!}">
+                <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsstyle="{!!asset(' admin/assets/css/bootstrap-dark.min.css') !!}" data-appstyle="{!! asset('admin/assets/css/app-dark.min.css') !!}">
                 <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
             </div>
 
@@ -161,32 +161,32 @@
 {{--</a>--}}
 
 <!-- Vendor js -->
-<script src="{!! asset('public\admin/assets/js/vendor.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/js/vendor.min.js') !!}"></script>
 
 <!-- Required datatable js -->
-<script src="{!! asset('public\admin/assets/libs/datatables/jquery.dataTables.min.js') !!}"></script>
-<script src="{!! asset('public\admin/assets/libs/datatables/dataTables.bootstrap4.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/libs/datatables/jquery.dataTables.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/libs/datatables/dataTables.bootstrap4.min.js') !!}"></script>
 <!-- Buttons examples -->
-<script src="{!! asset('public\admin/assets/libs/datatables/dataTables.buttons.min.js') !!}"></script>
-<script src="{!! asset('public\admin/assets/libs/datatables/buttons.bootstrap4.min.js') !!}"></script>
-<script src="{!! asset('public\admin/assets/libs/jszip/jszip.min.js') !!}"></script>
-<script src="{!! asset('public\admin/assets/libs/pdfmake/pdfmake.min.js') !!}"></script>
-<script src="{!! asset('public\admin/assets/libs/pdfmake/vfs_fonts.js') !!}"></script>
-<script src="{!! asset('public\admin/assets/libs/datatables/buttons.html5.min.js') !!}"></script>
-<script src="{!! asset('public\admin/assets/libs/datatables/buttons.print.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/libs/datatables/dataTables.buttons.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/libs/datatables/buttons.bootstrap4.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/libs/jszip/jszip.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/libs/pdfmake/pdfmake.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/libs/pdfmake/vfs_fonts.js') !!}"></script>
+<script src="{!! asset('admin/assets/libs/datatables/buttons.html5.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/libs/datatables/buttons.print.min.js') !!}"></script>
 
 <!-- Responsive examples -->
-<script src="{!! asset('public\admin/assets/libs/datatables/dataTables.responsive.min.js') !!}"></script>
-<script src="{!! asset('public\admin/assets/libs/datatables/responsive.bootstrap4.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/libs/datatables/dataTables.responsive.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/libs/datatables/responsive.bootstrap4.min.js') !!}"></script>
 
-<script src="{!! asset('public\admin/assets/libs/datatables/dataTables.keyTable.min.js') !!}"></script>
-<script src="{!! asset('public\admin/assets/libs/datatables/dataTables.select.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/libs/datatables/dataTables.keyTable.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/libs/datatables/dataTables.select.min.js') !!}"></script>
 
 <!-- Datatables init -->
-<script src="{!! asset('public\admin/assets/js/pages/datatables.init.js') !!}"></script>
+<script src="{!! asset('admin/assets/js/pages/datatables.init.js') !!}"></script>
 
 <!-- App js -->
-<script src="{!! asset('public\admin/assets/js/app.min.js') !!}"></script>
+<script src="{!! asset('admin/assets/js/app.min.js') !!}"></script>
 <script>CKEDITOR.replace('contents')</script>
 <script type="text/javascript">
     $(document).ready(function () {

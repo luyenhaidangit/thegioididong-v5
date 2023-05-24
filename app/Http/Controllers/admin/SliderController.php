@@ -10,11 +10,6 @@ use Session;
 
 class SliderController extends Controller {
 
-  /**
-   * Display a listing of the resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
   public function __construct() {
     $this->middleware('CheckAdminLogin');
     $this->viewprefix = 'admin.slider.';
@@ -22,28 +17,19 @@ class SliderController extends Controller {
     $this->index = 'slider.index';
   }
 
+  // Slide view
   public function index() {
     $sliders = Slider::all();
     return view($this->viewprefix . 'index', compact('sliders'));
   }
 
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
+  // Create view
   public function create() {
     $sliders = Slider::all();
     return view($this->viewprefix . 'create', compact('sliders'));
   }
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   *
-   * @return \Illuminate\Http\Response
-   */
+  // Create
   public function store(Request $request) {
     $data = $request->validate([
       'image' => 'required',
@@ -57,9 +43,11 @@ class SliderController extends Controller {
     ], [
       'image.required' => 'Hình ảnh không được để trống',
     ]);
+
     $data['image'] = Helper::imageUpload($request);
+
     if (Slider::create($data)) {
-      Session::flash('message', 'successfully!');
+      Session::flash('message', 'Thành công!');
     }
     else {
       return redirect()->back()->withErrors($data);
@@ -68,22 +56,12 @@ class SliderController extends Controller {
     return redirect()->route($this->index);
   }
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  \App\Models\Slider  $Slider
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function show(Slider $Slider) {
-
-  }
-
+  // Edit view
   public function edit(Slider $slider) {
     return view($this->viewprefix . 'edit')->with('slider', $slider);
-    // return view($this->viewprefix.'edit',compact('product'));
   }
 
+  // Edit
   public function update(Request $request, Slider $slider) {
     $data = $request->validate([
       'image' => 'required',
@@ -97,9 +75,10 @@ class SliderController extends Controller {
     ], [
       'image.required' => 'Hình ảnh không được để trống',
     ]);
+
     $data['image'] = Helper::imageUpload($request);
     if ($slider->update($data)) {
-      Session::flash('message', ' Update successfully!');
+      Session::flash('message', ' Cập nhật thành công!');
     }
     else {
       return redirect()->back()->withErrors($data);
@@ -107,17 +86,18 @@ class SliderController extends Controller {
     return redirect()->route('slider.index');
   }
 
-
+  // Delete
   public function destroy(Slider $slider) {
     if ($slider->delete()) {
-      Session::flash('message', 'successfully!');
+      Session::flash('message', 'Thành công!');
     }
     else {
-      Session::flash('message', 'Failure!');
+      Session::flash('message', 'Thất bại!');
     }
     return redirect()->route('slider.index');
   }
 
+  // Change status
   public function changestatusslider($id) {
     $slider = Slider::find($id);
     $slider->status = !$slider->status;

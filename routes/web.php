@@ -54,7 +54,7 @@ Route::resource('panel/category', admin\CategoryController::class);
 Route::resource('panel/customer', admin\AccountcustomerController::class);
 Route::resource('panel/order', admin\OrderController::class);
 Route::get('panel/delete/{order_id}', 'admin\OrderController@delete_order')->name('admin.delete');
-Route::resource('panel/slider', admin\SliderController::class);
+
 
 Route::resource('panel/contact', admin\ContactController::class);
 Route::resource('panel/filemanager', admin\FilemanagerController::class);
@@ -72,16 +72,12 @@ Route::post('panel/tim-kiem-thong-ke-nhap', 'admin\ImportController@search_thong
 Route::get('panel/dieu-khoan', 'admin\AboutController@dieukhoan')->name('admin.dieukhoan');
 Route::get('panel/cancel/cancel-order/{cancel_id}', 'admin\CancelController@cancel')->name('admin.cancel-order');
 
-// Manage
-// About
+// Manage view
 Route::resource('panel/about', admin\AboutController::class);
-// Blog
 Route::resource('panel/blog', admin\BlogController::class);
-// Faq
 Route::resource('panel/faq', admin\FaqController::class);
-// Logo
 Route::resource('panel/logo',admin\LogoController::class);
-
+Route::resource('panel/slider', admin\SliderController::class);
 
 Route::group(['prefix' => 'panel', 'namespace' => 'admin'], function () {
     Route::post('update-delivery','DeliveryController@update_delivery')->name('update-delivery');
