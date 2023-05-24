@@ -10,7 +10,7 @@
         </div>
 
         <div class="home-banner outer-top-n outer-bottom-xs">
-            <img style="width: 100%;" src="{{asset('public/frontend/assets\images\banners\Thiet-ke-banner-quang-cao-dien-thoai-2.jpg')}}" alt="Image">
+            <img style="width: 100%;" src="{{asset('frontend/assets\images\banners\banner.webp')}}" alt="Image">
         </div>
         <!-- ==============================================CATEGORY============================================== -->
         <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
@@ -54,7 +54,7 @@
                         <img class="img-responsive" src="{{asset('public/images/'.$blog->image)}}"
                              alt="">
                         <h5><a href="{{route('shopping.blog-detail',$blog->blog_id)}}">{{$blog->blog_title}}</a></h5>
-                        <span class="review">6 Comments</span>
+                        <span class="review">{{$blog->view}} lượt xem</span>
                         <span class="date-time">{{date('d-m-Y', strtotime($blog->blog_time))}}</span>
 {{--                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>--}}
                     </div>
@@ -69,7 +69,7 @@
                         <img class="img-responsive" src="{{asset('public/images/'.$blog->image)}}"
                              alt="">
                         <h4><a href="{{route('shopping.blog-detail',$blog->blog_id)}}">{{$blog->blog_title}}</a></h4>
-                        <span class="review">6 Comments</span>
+                        <span class="review">{{$blog->view}} lượt xem</span>
                         <span class="date-time">{{date('d-m-Y', strtotime($blog->blog_time))}}</span>
 {{--                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>--}}
 

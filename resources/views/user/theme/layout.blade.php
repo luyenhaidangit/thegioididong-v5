@@ -17,23 +17,54 @@
 @yield('content')
 
 @include('user.theme.footer')
-{{--<div class="loader-container">--}}
-{{--    <img src="/images/loader.gif" alt="">--}}
-{{--</div>--}}
-{{--<script>--}}
-{{--    function loader(){--}}
-{{--        document.querySelector('.loader-container').classList.add('fade-out');--}}
-{{--    }--}}
 
-{{--    function fadeOut(){--}}
-{{--        setInterval(loader, 3000);--}}
-{{--    }--}}
+<div class="hotline-phone-ring-wrap" style="bottom: 285px">
+    <div class="hotline-phone-ring">
+        <div class="hotline-phone-ring-circle"></div>
+        <div class="hotline-phone-ring-circle-fill"></div>
+        <div class="hotline-phone-ring-img-circle">
+            <a href="tel:0922002360" class="pps-btn-img">
+                <img src="https://nguyenhung.net/wp-content/uploads/2019/05/icon-call-nh.png" alt="Gọi điện thoại" width="50">
+            </a>
+        </div>
+    </div>
+    <div class="hotline-bar">
+        <a href="tel:0922002360">
+        </a>
+    </div>
+</div>
+<div class="hotline-phone-ring-wrap">
+    <div class="hotline-phone-ring">
+        <div class="hotline-phone-ring-circle"></div>
+        <div class="hotline-phone-ring-circle-fill"></div>
+        <div class="hotline-phone-ring-img-circle" style="animation: none;">
+            <a href="https://zalo.me/0922002360" target="_blank" class="pps-btn-img">
+                <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png" alt="chat zalo" width="50">
+            </a>
+        </div>
+    </div>
+    <div class="hotline-bar">
+        <a href="tel:0922002360">
+        </a>
+    </div>
+</div>
+<div class="hotline-phone-ring-wrap" style="bottom: 115px">
+    <div class="hotline-phone-ring">
+        <div class="hotline-phone-ring-circle"></div>
+        <div class="hotline-phone-ring-circle-fill"></div>
+        <div class="hotline-phone-ring-img-circle" style="animation: none;">
+            <a href="https://www.facebook.com/LuyenHaiDang.Net" target="_blank" class="pps-btn-img">
+                <img src="https://www.mynet.vn/static/thuvienanh/Untitled-3.png" alt="chat zalo" width="50">
+            </a>
+        </div>
+    </div>
+    <div class="hotline-bar">
+        <a href="tel:0922002360">
+        </a>
+    </div>
+</div>
 
-{{--    window.onload = fadeOut();--}}
-{{--</script>--}}
 @yield('scripts')
-{{--back to top--}}
-
 
 <script src="{!! asset('/frontend/assets/js/jquery-1.11.1.min.js') !!}"></script>
 <script src="{!! asset('/frontend/assets/js/bootstrap.min.js') !!}"></script>
@@ -280,51 +311,7 @@
         alert("Đã sao chép mã: " + copyText.value);
     }
 </script>
-<div class="hotline-phone-ring-wrap" style="bottom: 285px">
-    <div class="hotline-phone-ring">
-        <div class="hotline-phone-ring-circle"></div>
-        <div class="hotline-phone-ring-circle-fill"></div>
-        <div class="hotline-phone-ring-img-circle">
-            <a href="tel:0987654321" class="pps-btn-img">
-                <img src="https://nguyenhung.net/wp-content/uploads/2019/05/icon-call-nh.png" alt="Gọi điện thoại" width="50">
-            </a>
-        </div>
-    </div>
-    <div class="hotline-bar">
-        <a href="tel:0987654321">
-        </a>
-    </div>
-</div>
-<div class="hotline-phone-ring-wrap">
-    <div class="hotline-phone-ring">
-        <div class="hotline-phone-ring-circle"></div>
-        <div class="hotline-phone-ring-circle-fill"></div>
-        <div class="hotline-phone-ring-img-circle" style="animation: none;">
-            <a href="https://zalo.me/0327355517" target="_blank" class="pps-btn-img">
-                <img src="https://datxanhmd-gemskyworld.com/assets/images/zl.png" alt="chat zalo" width="50">
-            </a>
-        </div>
-    </div>
-    <div class="hotline-bar">
-        <a href="tel:0327355517">
-        </a>
-    </div>
-</div>
-<div class="hotline-phone-ring-wrap" style="bottom: 115px">
-    <div class="hotline-phone-ring">
-        <div class="hotline-phone-ring-circle"></div>
-        <div class="hotline-phone-ring-circle-fill"></div>
-        <div class="hotline-phone-ring-img-circle" style="animation: none;">
-            <a href="https://www.facebook.com/v.luong.giap" target="_blank" class="pps-btn-img">
-                <img src="https://www.mynet.vn/static/thuvienanh/Untitled-3.png" alt="chat zalo" width="50">
-            </a>
-        </div>
-    </div>
-    <div class="hotline-bar">
-        <a href="tel:0327355517">
-        </a>
-    </div>
-</div>
+
 
 <SCRIPT>
     const sliderValue = document.querySelector("span");
@@ -422,6 +409,8 @@
         $('#myInput').trigger('focus')
     })
 </SCRIPT>
+
+
 </body>
 
 </html>

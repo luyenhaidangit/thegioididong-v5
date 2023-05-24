@@ -9,11 +9,6 @@ use Session;
 use App\Classes\Helper;
 class BlogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function __construct()
     {
         $this->middleware('CheckAdminLogin');
@@ -21,29 +16,22 @@ class BlogController extends Controller
         $this->viewnamespace='panel/blog';
         $this->index='blog.index';
     }
+    
+    // Blog index
     public function index()
     {
         $blogs = Blog::all();
         return view($this->viewprefix.'index' ,compact('blogs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Create index
     public function create()
     {
         $blogs = Blog::all();
         return view($this->viewprefix.'create',compact('blogs'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // Create
     public function store(Request $request)
     {
         $data=$request->validate([
@@ -61,21 +49,13 @@ class BlogController extends Controller
         return redirect()->route($this->index);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Slider  $Slider
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Blog $blog)
-    {
-
-    }
+    // Edit index
     public function edit(Blog $blog)
     {
         return view($this->viewprefix.'edit')->with('blog', $blog);
-        // return view($this->viewprefix.'edit',compact('product'));
     }
+    
+    // Edit
     public function update(Request $request, Blog $blog)
     {
         $data=$request->validate([
@@ -87,50 +67,31 @@ class BlogController extends Controller
         ]);
         $data['image'] = Helper::imageUpload($request);
         if($blog->update($data))
-            Session::flash('message', ' Update successfully!');
+            Session::flash('message', ' Cập nhật thành công!');
         else
-            Session::flash('message', 'Failure!');
+            Session::flash('message', 'Cập nhật thất bại!');
         return redirect()->route('blog.index');
     }
 
-
+    // Delete
     public function destroy(Blog $blog)
     {
         if($blog->delete())
-            Session::flash('message', 'successfully!');
+            Session::flash('message', 'Xoá thành công!');
         else
-            Session::flash('message', 'Failure!');
+            Session::flash('message', 'Xoá thất bại!');
         return redirect()->route('blog.index');
     }
-//
-//
-//
-//    public function productlist($id){
-//
-//        $products = Slider::find($id)->product;
-//        return view('admin.Slider.productlist', compact('products'));
-//    }
-//
-//    public function changestatus($id)
-//    {
-//        $Slider= Slider::find($id);
-//        $Slider->Slider_status=!$Slider->Slider_status;
-//        if($Slider->save()){
-//            return redirect()->back();
-//        }
-//        else
-//        {
-//            return redirect(route('changestatus'));
-//        }
-//    }
-  public function changestatusblog($id) {
-    $blog = Blog::find($id);
-    $blog->status = !$blog->status;
-    if ($blog->save()) {
-      return redirect()->back();
-    }
-    else {
-      return redirect(route('changestatusblog'));
-    }
+
+    // Change status
+    public function changestatusblog($id) {
+        $blog = Blog::find($id);
+        $blog->status = !$blog->status;
+        if ($blog->save()) {
+            return redirect()->back();
+        }
+        else {
+            return redirect(route('changestatusblog'));
+        }
   }
 }

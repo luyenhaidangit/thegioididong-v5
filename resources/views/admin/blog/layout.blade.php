@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>TLmobile | Admin Dashboard</title>
+    <title>Thegioididong | Hệ thống bán lẻ điện thoại di động, smartphone, máy tính bảng, tablet, laptop, phụ kiện, smartwatch, đồng hồ chính hãng mới nhất, giá tốt, dịch vụ khách ...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Responsive bootstrap 4 admin template" name="description">
     <meta content="Coderthemes" name="author">
@@ -155,6 +155,7 @@
 <script src="{!! asset('admin/assets/js/app.min.js') !!}"></script>
 <script>CKEDITOR.replace('contents')</script>
 <script>CKEDITOR.replace('data')</script>
+
 </body>
 
 </html>

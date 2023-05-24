@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                2021 &copy; Bản quyền bởi <a href="">TLmobile</a>
+                2023 &copy; Bản quyền bởi <a href="">Thegioididong</a>
             </div>
         </div>
     </div>

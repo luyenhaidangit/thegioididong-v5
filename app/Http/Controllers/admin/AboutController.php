@@ -93,7 +93,7 @@ class AboutController extends Controller
             $about->about_content = $request->about_content;
             $about->about_status = $request->about_status;
             if($about->save()){
-                return redirect()->back()->with('status', 'Cập nhật thành công!');
+                return redirect()->back()->with('success', 'Cập nhật thành công!');
             }else {
                 return redirect()->back()->with('error', 'Cập nhật thất bại!');
             }
@@ -106,7 +106,7 @@ class AboutController extends Controller
         ]);
         $data['about_image'] = Helper::imageUpload($request);
         if ($about->update($data)) {
-            return redirect()->back()->with('status','sửa thành công!');
+            return redirect()->back()->with('success','Sửa thành công!');
         } else {
             return redirect()->back()->with('error','Sửa thất bại!');
         }
