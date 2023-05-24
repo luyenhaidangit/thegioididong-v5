@@ -18,11 +18,8 @@ class LogoController extends Controller
         $this->viewnamespace='panel/logo';
         $this->index='logo.index';
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    // Logo view
     public function index()
     {
         //
@@ -31,24 +28,7 @@ class LogoController extends Controller
         return view($this->viewprefix.'index' ,compact('logo','count_logo'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        $logos = Logo::all();
-        return view($this->viewprefix.'create',compact('logos'));
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // Create
     public function store(Request $request)
     {
         //
@@ -56,54 +36,17 @@ class LogoController extends Controller
             'logo_image' => 'required',
             'logo_status' => 'required',
         ]);
+
         $data['logo_image'] = Helper::background_imageUpload($request);
+
         if(Logo::create($data))
-            Session::flash('message', 'successfully!');
+            Session::flash('message', 'Thành công!');
         else
-            Session::flash('message', 'Failure!');
+            Session::flash('message', 'Thất bại!');
         return redirect()->route($this->index);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Request $request,$id)
-    {
-
-    }
-
-    public function hien_thi(Request $request)
-    {
-
-        $data = $request->all();
-        Logo::where('logo_id', $data['id'])
-            ->update([
-                'logo_status'	=>	$data['result'],
-            ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Logo $logo)
-    {
-        //
-        return view($this->viewprefix.'edit')->with('logo', $logo);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Edit
     public function update(Request $request, Logo $logo)
     {
         if($request->logo_image===null){
@@ -121,27 +64,11 @@ class LogoController extends Controller
             ]);
             $data['logo_image'] = Helper::background_imageUpload($request);
             if($logo->update($data))
-                Session::flash('message', ' Update successfully!');
+                Session::flash('message', 'Cập nhật thành công!');
             else
-                Session::flash('message', 'Failure!');
+                Session::flash('message', 'Thất bại!');
             return redirect()->route('logo.index');
         }
 
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Logo $logo)
-    {
-        //
-        if($logo->delete())
-            Session::flash('message', 'successfully!');
-        else
-            Session::flash('message', 'Failure!');
-        return redirect()->route('logo.index');
     }
 }

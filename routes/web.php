@@ -55,14 +55,13 @@ Route::resource('panel/customer', admin\AccountcustomerController::class);
 Route::resource('panel/order', admin\OrderController::class);
 Route::get('panel/delete/{order_id}', 'admin\OrderController@delete_order')->name('admin.delete');
 Route::resource('panel/slider', admin\SliderController::class);
-Route::resource('panel/blog', admin\BlogController::class);
-Route::resource('panel/faq', admin\FaqController::class);
+
 Route::resource('panel/contact', admin\ContactController::class);
 Route::resource('panel/filemanager', admin\FilemanagerController::class);
 Route::resource('panel/coupon', admin\CouponController::class);
 Route::resource('panel/delivery', admin\DeliveryController::class);
 Route::resource('panel/brand',admin\BrandController::class);
-Route::resource('panel/logo',admin\LogoController::class);
+
 Route::resource('panel/dashboard',admin\DashboardController::class);
 Route::resource('panel/empcategory',admin\EmpcategoryController::class);
 Route::resource('panel/employee',admin\EmployeeController::class);
@@ -73,8 +72,15 @@ Route::post('panel/tim-kiem-thong-ke-nhap', 'admin\ImportController@search_thong
 Route::get('panel/dieu-khoan', 'admin\AboutController@dieukhoan')->name('admin.dieukhoan');
 Route::get('panel/cancel/cancel-order/{cancel_id}', 'admin\CancelController@cancel')->name('admin.cancel-order');
 
+// Manage
 // About
 Route::resource('panel/about', admin\AboutController::class);
+// Blog
+Route::resource('panel/blog', admin\BlogController::class);
+// Faq
+Route::resource('panel/faq', admin\FaqController::class);
+// Logo
+Route::resource('panel/logo',admin\LogoController::class);
 
 
 Route::group(['prefix' => 'panel', 'namespace' => 'admin'], function () {
@@ -177,13 +183,11 @@ Route::group(['prefix' => '', 'namespace' => 'user'], function () {
     Route::get('chi-tiet/{id}','ProductController@viewProduct')->name('product.viewProduct');
     Route::get('chi-tiet/addCart/{id}', 'UserController@AddCart')->name('shopping.addCart');
 
-    Route::get('tin-tuc', 'BlogController@index')->name('shopping.blog');
-    Route::get('tin-tuc/bai-viet/{id}', 'BlogController@blogdetail')->name('shopping.blog-detail');
-
+  
     Route::get('Lien-he', 'ContactController@showForm')->name('shopping.contact');
     Route::post('dang-ky-lien-he', 'ContactController@storeForm')->name('shopping.addcontact');
 
-    Route::get('1-van-cau-hoi-vi-sao', 'FaqController@index')->name('shopping.faq');
+    
 
     Route::get('nhan-ma-giam-gia','CouponController@index')->name('shopping.coupon');
 
@@ -198,9 +202,14 @@ Route::group(['prefix' => '', 'namespace' => 'user'], function () {
 
     Route::post('nhan-xet','CommentController@add_comment')->name('customer.postcomment');
 
+    // Abouts
     Route::get('gioi-thieu','AboutController@index')->name('shopping.about');
     Route::get('dieu-khoan','AboutController@dieukhoan')->name('shopping.dieukhoan');
-
+    // Blog
+    Route::get('tin-tuc', 'BlogController@index')->name('shopping.blog');
+    Route::get('tin-tuc/bai-viet/{id}', 'BlogController@blogdetail')->name('shopping.blog-detail');
+    // Faq
+    Route::get('1-van-cau-hoi-vi-sao', 'FaqController@index')->name('shopping.faq');
 });
 
 
