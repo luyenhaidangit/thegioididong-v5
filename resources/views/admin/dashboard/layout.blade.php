@@ -688,82 +688,82 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.7.0/echarts.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-// <script>
-//     $(function () {
-//         'use strict'
-//         var ticksStyle = {
-//             fontColor: '#495057',
-//             fontStyle: 'bold'
-//         }
-//         var mode = 'index'
-//         var intersect = true
-//         var $visitorsChart = $('#visitors-chart')
-//         // eslint-disable-next-line no-unused-vars
-//         var visitorsChart = new Chart($visitorsChart, {
-//             data: {
-//                 labels: {!! json_encode($date_time_add->map(function ($d){return $d->format('d/m/y');})) !!},
-//                 datasets: [{
-//                     type: 'line',
-//                     data: {!! json_encode($visitor) !!},
-//                     backgroundColor: 'transparent',
-//                     borderColor: '#007bff',
-//                     pointBorderColor: '#007bff',
-//                     pointBackgroundColor: '#007bff',
-//                     fill: false
-//                     // pointHoverBackgroundColor: '#007bff',
-//                     // pointHoverBorderColor    : '#007bff'
-//                 },
-//                     {
-//                         type: 'line',
-//                         data: {!! json_encode($pageview) !!},
-//                         backgroundColor: 'tansparent',
-//                         borderColor: '#ced4da',
-//                         pointBorderColor: '#ced4da',
-//                         pointBackgroundColor: '#ced4da',
-//                         fill: false
-//                         // pointHoverBackgroundColor: '#ced4da',
-//                         // pointHoverBorderColor    : '#ced4da'
-//                     }]
-//             },
-//             options: {
-//                 maintainAspectRatio: false,
-//                 tooltips: {
-//                     mode: mode,
-//                     intersect: intersect
-//                 },
-//                 hover: {
-//                     mode: mode,
-//                     intersect: intersect
-//                 },
-//                 legend: {
-//                     display: false
-//                 },
-//                 scales: {
-//                     yAxes: [{
-//                         // display: false,
-//                         gridLines: {
-//                             display: true,
-//                             lineWidth: '4px',
-//                             color: 'rgba(0, 0, 0, .2)',
-//                             zeroLineColor: 'transparent'
-//                         },
-//                         ticks: $.extend({
-//                             beginAtZero: true,
-//                             suggestedMax: 200
-//                         }, ticksStyle)
-//                     }],
-//                     xAxes: [{
-//                         display: true,
-//                         gridLines: {
-//                             display: false
-//                         },
-//                         ticks: ticksStyle
-//                     }]
-//                 }
-//             }
-//         })
-//     })
-// </script>
+<script>
+    $(function () {
+        'use strict'
+        var ticksStyle = {
+            fontColor: '#495057',
+            fontStyle: 'bold'
+        }
+        var mode = 'index'
+        var intersect = true
+        var $visitorsChart = $('#visitors-chart')
+        // eslint-disable-next-line no-unused-vars
+        var visitorsChart = new Chart($visitorsChart, {
+            data: {
+                labels: {!! json_encode($date_time_add->map(function ($d){return $d->format('d/m/y');})) !!},
+                datasets: [{
+                    type: 'line',
+                    data: {!! json_encode($visitor) !!},
+                    backgroundColor: 'transparent',
+                    borderColor: '#007bff',
+                    pointBorderColor: '#007bff',
+                    pointBackgroundColor: '#007bff',
+                    fill: false
+                    // pointHoverBackgroundColor: '#007bff',
+                    // pointHoverBorderColor    : '#007bff'
+                },
+                    {
+                        type: 'line',
+                        data: {!! json_encode($pageview) !!},
+                        backgroundColor: 'tansparent',
+                        borderColor: '#ced4da',
+                        pointBorderColor: '#ced4da',
+                        pointBackgroundColor: '#ced4da',
+                        fill: false
+                        // pointHoverBackgroundColor: '#ced4da',
+                        // pointHoverBorderColor    : '#ced4da'
+                    }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                tooltips: {
+                    mode: mode,
+                    intersect: intersect
+                },
+                hover: {
+                    mode: mode,
+                    intersect: intersect
+                },
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        // display: false,
+                        gridLines: {
+                            display: true,
+                            lineWidth: '4px',
+                            color: 'rgba(0, 0, 0, .2)',
+                            zeroLineColor: 'transparent'
+                        },
+                        ticks: $.extend({
+                            beginAtZero: true,
+                            suggestedMax: 200
+                        }, ticksStyle)
+                    }],
+                    xAxes: [{
+                        display: true,
+                        gridLines: {
+                            display: false
+                        },
+                        ticks: ticksStyle
+                    }]
+                }
+            }
+        })
+    })
+</script>
 <script>
     let dateDropdown = document.getElementById('date-dropdown');
 
