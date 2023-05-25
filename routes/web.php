@@ -42,8 +42,8 @@ Route::group(['middleware' => 'CheckAdminLogin','prefix' => 'panel/user', 'names
     Route::get('changestatusorder-detail','OrderController@changestatusorder_detail')->name('order.changestatus-detail');
 
 
-  Route::get('search','DashboardController@search_order')->name('order.search');
-  Route::get('search_line_order','DashboardController@search_line_order')->name('order_line.search');
+  // Route::get('search','DashboardController@search_order')->name('order.search');
+  // Route::get('search_line_order','DashboardController@search_line_order')->name('order_line.search');
 
   Route::post('logo/trang-thai','LogoController@hien_thi')->name('logo.trang-thai');
 
@@ -158,9 +158,9 @@ Route::group(['prefix' => '', 'namespace' => 'user'], function () {
     Route::get('danh-sach-yeu-thich/them/{id}', 'WishlistController@addToWishlist');
     Route::get('danh-sach-yeu-thich/xoa/{wishlist_id}','WishlistController@destroy');
 
-//    Route::get('so-sanh-san-pham', 'ComparisonController@index')->name('shopping.showComparison');
-//    Route::get('so-sanh-san-pham/them/{id}', 'ComparisonController@addToComparison');
-//    Route::get('so-sanh-san-pham/xoa/{comparison_id}','ComparisonController@destroy');
+  //  Route::get('so-sanh-san-pham', 'ComparisonController@index')->name('shopping.showComparison');
+  //  Route::get('so-sanh-san-pham/them/{id}', 'ComparisonController@addToComparison');
+  //  Route::get('so-sanh-san-pham/xoa/{comparison_id}','ComparisonController@destroy');
 
     Route::get('tim-kiem','ProductController@search_product')->name('product.search');
     Route::get('tim-kiem-tin-tuc','BlogController@index')->name('blog.search');

@@ -11,16 +11,12 @@ class AccountcustomerController extends Controller
 {
     public function __construct()
     {
-
         $this->middleware('CheckAdminLogin');
         $this->viewprefix='admin.customer.';
         $this->index='customer.index';
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
+    // Account index
     public function index()
     {
         //
@@ -28,56 +24,7 @@ class AccountcustomerController extends Controller
         return view($this->viewprefix.'index', compact('customers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Update
     public function update(Request $request, AccountCustomer $accountCustomer)
     {
         //
@@ -90,17 +37,7 @@ class AccountcustomerController extends Controller
         return redirect()->route('slider.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(AccountCustomer $accountCustomer)
-    {
-        //
-
-    }
+    // Change status
     public function changestatuscustomerlock($id) {
         $customer = AccountCustomer::find($id);
         $customer->status = 2;
@@ -112,6 +49,8 @@ class AccountcustomerController extends Controller
             return redirect(route('changestatuscustomer'));
         }
     }
+
+    // Unlock Account
     public function changestatuscustomerunlock($id) {
         $customer = AccountCustomer::find($id);
         $customer->status = 1;

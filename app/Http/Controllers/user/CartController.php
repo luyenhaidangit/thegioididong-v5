@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
+    // Cart view
     public function index()
     {
         $logos = Logo::first();

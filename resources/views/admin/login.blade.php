@@ -127,7 +127,7 @@
             <div class="col-md-8 col-lg-6 col-xl-5">
                 <div class="card mt-4">
                     <div class="card-header p-4 bg-primary">
-                        <h4 class="text-white text-center mb-0 mt-0">TL Mobile</h4>
+                        <h4 class="text-white text-center mb-0 mt-0">Thegioididong</h4>
                     </div>
                     <div class="card-body">
                         @if (count($errors) >0)
@@ -188,7 +188,7 @@
             <!-- end col -->
         </div>
         <!-- end row -->
-
+        <iframe src="https://chatfast.io/chat/8df95e3a-de2d-4bfa-9deb-fd6581e9d719" width="450px" height="600px"></iframe>
     </div>
 </div>
 
@@ -197,6 +197,8 @@
 
 <!-- App js -->
 <script src="{!! asset('admin/assets/js/app.min.js') !!}"></script>
+
+
 
 </body>
 

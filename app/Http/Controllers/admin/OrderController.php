@@ -220,49 +220,48 @@ class OrderController extends Controller
 
         $shipping=Shipping::where('shipping_id','=',$order_detail->shipping_id)->first();
 
-        require "app/PHPMailer-master/src/PHPMailer.php";  //nhúng thư viện vào để dùng, sửa lại đường dẫn cho đúng nếu bạn lưu vào chỗ khác
-        require "app/PHPMailer-master/src/SMTP.php"; //nhúng thư viện vào để dùng
-        require 'app/PHPMailer-master/src/Exception.php'; //nhúng thư viện vào để dùng
-        $mail = new PHPMailer(true);  //true: enables exceptions
-        try{
-            $mail->SMTPDebug = 2;  // 0,1,2: chế độ debug. khi mọi cấu hình đều tớt thì chỉnh lại 0 nhé
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';  //SMTP servers
-            $mail->SMTPAuth = true; // Enable authentication
-            $nguoigui = 'dinhtrongak123@gmail.com';
-            $matkhau = 'Honghao170400';
-            $tennguoigui = 'TLmobile';
-            $mail->Username = $nguoigui; // SMTP username
-            $mail->Password = $matkhau;   // SMTP password
-            $mail->SMTPSecure = 'ssl';  // encryption TLS/SSL
-            $mail->Port = 465;  // port to connect to
-            $mail->CharSet = 'UTF-8';
-            $mail->setFrom($nguoigui, $tennguoigui);
-            $to = $shipping->customer_email;
-            $to_name = $shipping->customer_name;
+       
 
-            $mail->addAddress($to, $to_name); //mail và tên người nhận
-            $mail->isHTML(true);  // Set email format to HTML
-            $mail->Subject = "Thông tin đơn hàng (#HDBH". $order_detail->order_id .")";
-            $noidungthu = "<p style='display: contents;'>Xin chào, </p> <b>".$shipping->customer_name."</b><br><p>". $status ."</p>
+        require dirname(__DIR__) . "\user\PHPMailer-master\src\PHPMailer.php"; //nhúng thư viện vào để dùng, sửa lại đường dẫn cho đúng nếu bạn lưu vào chỗ khác
+            require dirname(__DIR__) . "\user\PHPMailer-master\src\SMTP.php"; //nhúng thư viện vào để dùng
+            require dirname(__DIR__) . '\user\PHPMailer-master\src\Exception.php'; //nhúng thư viện vào để dùng
+
+            $mail = new PHPMailer(true);
+
+            try {
+                // Cấu hình cho việc gửi email
+                $mail->isSMTP();
+                $mail->CharSet = 'UTF-8';
+                $mail->Host = 'smtp.office365.com'; // Địa chỉ máy chủ SMTP của Outlook
+                $mail->SMTPAuth = true;
+                $mail->Username = 'luyenhaidangit@outlook.com'; // Địa chỉ email của bạn
+                $mail->Password = 'Haidang106'; // Mật khẩu của bạn
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = 587;
+
+                $to = $request->email;
+                $to_name = $request->email;
+                // Cấu hình thông tin người gửi và người nhận
+                $mail->setFrom('luyenhaidangit@outlook.com', 'Luyện Hải Đăng'); // Địa chỉ email và tên người gửi
+                $mail->addAddress($to, $to_name); // Địa chỉ email và tên người nhận
+                $mail->isHTML(true); // Set email format to HTML
+                $mail->Subject = "Mail xác nhận đã đăng ký liên hệ thành công";
+                // Cấu hình nội dung email
+                $mail->isHTML(true);
+                // $cus_id = $user->id;
+                $noidungthu = "<p style='display: contents;'>Xin chào, </p> <b>"."</b><br><p>" ."</p>
                            <p>Xin cảm ơn quý khách!</p>
                            <p style='font-style: italic;color: red'>Mọi chi tiết xin vui lòng liên hệ với chúng tôi qua hotline: 0327355517</p>";
-            $mail->Body = $noidungthu;
-            $mail->SMTPOptions = array(
-                'ssl' => array(
-                    'verify_peer' => false,
-                    'verify_peer_name' => false,
-                    'allow_self_signed' => true
-                )
-            );
-            if (!$mail->Send()) {
-                return redirect()->back()->with('error','Gửi email thất bại.');
-//
-            } else {
-                return redirect()->back()->with('success','Cập nhật trạng thái đơn hàng thành công!');
+                $mail->Body = $noidungthu;
+
+                // Gửi email
+                $mail->send();
+
+                return redirect()->back()->with('success', 'Làm ơn click vào đường link chúng tôi đã gửi qua email của bạn để xác minh danh tính!');
+
+            } catch (Exception $e) {
+           
+                return redirect()->back()->with('error', 'Chúng tôi không thể gửi email xác minh cho bạn được.');
             }
-        }catch (Exception $e) {
-            return redirect()->back()->with('error','Đã có lỗi xảy ra! Gửi email thất bại');
-        }
     }
 }

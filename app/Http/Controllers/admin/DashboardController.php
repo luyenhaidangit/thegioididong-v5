@@ -19,6 +19,8 @@ use DB;
 use Illuminate\Http\Request;
 use Session;
 use Illuminate\Support\InteractsWithTime;
+use App\Models\Import;
+
 class DashboardController extends Controller {
 
   /**
@@ -175,10 +177,18 @@ class DashboardController extends Controller {
 //   }
 
 public function index(Request $request) {
+  $monthnow = Carbon::now('Asia/Ho_Chi_Minh')->month;
+  $yearnow = Carbon::now('Asia/Ho_Chi_Minh')->year;
+  $product=Product::where('status','<>',0)->count();
+  $import=Import::join('product','product.id','=','import.product_id')
+      ->whereMonth('import.created_at', $monthnow)->whereyear('import.created_at', $yearnow)->get();
+  $order=Product::join('order_details','order_details.id','product.id')
+      ->join('order','order.order_id','order_details.order_id')
+      ->where('order_status','<>',0)->where('order_status','<>',5)
+      ->get();
 
-  // Google Analytic
-    
-    return view($this->viewprefix . 'layout');
+  return view('admin.dashboard_import.layout',compact('order','product','import'));
+  
   }
 
   public function search_order(Request $request) {

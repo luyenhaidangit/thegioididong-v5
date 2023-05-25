@@ -102,7 +102,7 @@
     <div class="d-print-none">
         <div class="float-right">
             <a href="javascript:window.print()" class="btn btn-dark waves-effect waves-light mr-1"><i class="fa fa-print"></i></a>
-            <a href="#" class="btn btn-primary waves-effect waves-light">Submit</a>
+            <a href="http://127.0.0.1:8000/panel/user/changestatusorder-detail?order_id={{$order->order_id}}&status={{$order->order_status}}&email=luyenhaidangit@gmail.com" class="btn btn-primary waves-effect waves-light">Submit</a>
         </div>
     </div>
  @stop

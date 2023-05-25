@@ -64,8 +64,16 @@
     </div>
 </div>
 
-@yield('scripts')
+{{-- <h1>Pusher Test</h1>
+<p>
+  Try publishing an event to channel <code>my-channel</code>
+  with event name <code>my-event</code>.
+</p> --}}
 
+
+
+@yield('scripts')
+<script src="https://chatfast.io/chat.script.js" data-chat-service="ChatFast" data-bot-id="8df95e3a-de2d-4bfa-9deb-fd6581e9d719" data-chat-width="450px" data-chat-height="600px"></script>
 <script src="{!! asset('/frontend/assets/js/jquery-1.11.1.min.js') !!}"></script>
 <script src="{!! asset('/frontend/assets/js/bootstrap.min.js') !!}"></script>
 <script src="{!! asset('/frontend/assets/js/bootstrap-hover-dropdown.min.js') !!}"></script>
@@ -85,6 +93,22 @@
 @include('user.page.cart_page.scripts_cart')
 @include('user.page.wishlist_page.scripts_wishlist')
 <!-- JavaScript Alertifyjs-->
+
+{{-- <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+  <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('50e973b35a4938f1fdff', {
+      cluster: 'ap1'
+    });
+
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('my-event', function(data) {
+      alert(JSON.stringify(data));
+    });
+  </script> --}}
 
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 

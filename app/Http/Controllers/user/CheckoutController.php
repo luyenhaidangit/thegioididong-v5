@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Session;
 
 class CheckoutController extends Controller
 {
-    //
+    // Checkout view
     public function index(){
         $logos=Logo::first();
         $categorys=Category::where('category_status',1)->orderby('category_position','asc')->limit(4)->get();
@@ -49,6 +49,7 @@ class CheckoutController extends Controller
             $quanhuyen=Province::where('maqh',Session::get('fee_maqh'))->first();
             $xaphuong=Wards::where('xaid',Session::get('fee_xaid'))->first();
         }
+        
         if (Auth::guard('account_customer')->check()) {
             $wishlists = Wishlist::where('customer_id', Auth::guard('account_customer')->id())->get();
         }else{

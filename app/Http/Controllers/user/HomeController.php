@@ -45,48 +45,64 @@ class HomeController extends Controller
                 ->limit(3)
                 ->get();
 
-
+        // Phone by view_count
         $dong_ho=Product::join('category','category.category_id','=','product.idcat')
             ->where('product.status','<>',0)
-            ->where('category.category_name','like','%'.'điện thoại'.'%')
+            ->where('category.category_name','=',0)
             ->orderby('view_number','desc')->limit(30)->get();
 
+        // Tag
         $product_tag=Product::where('status','<>',0)->orderby('view_number','desc')->limit(8)->get();
 
+        // Old
         $old_phone=Product::join('category','category.category_id','=','product.idcat')
             ->where('product.status','<>',0)
-            ->where('category.category_name','like','%'.'cũ'.'%')
+            ->where('product.name','like','%'.'cũ'.'%')
             ->orderby('view_number','desc')->limit(30)->get();
 
         // Slide
         $sliders = Slider::all();
 
+        // Product new
         $products = Product::where('status','<>',0)->orderby('id','desc')->limit(30)->get();
+
+        // Phone featured
         $featured_phone=Product::join('category','category.category_id','=','product.idcat')
             ->where('product.status','<>',0)
             ->where('category.category_name','like','%'.'điện thoại'.'%')
             ->orderby('view_number','desc')->limit(30)->get();
+
+        // Phụ kiện
         $phu_kien=Product::join('category','category.category_id','=','product.idcat')
             ->where('product.status','<>',0)
-            ->where('category.category_name','like','%'.'điện tử'.'%')
+            ->where('category.category_name','like','%'.'phụ kiện'.'%')
             ->orderby('view_number','desc')->limit(60)->get();
+
+        // Laptop feature
         $featured_laptop=Product::join('category','category.category_id','=','product.idcat')
             ->where('product.status','<>',0)
             ->where('category.category_name','like','%'.'laptop'.'%')
             ->orderby('view_number','desc')->limit(30)->get();
 
+        // Blog
         $blogs = Blog::all();
         $firsts=$blogs->first();
 
+        // Employee
         $employee = Employee::all();
         $empcategory = Empcategory::all();
 
+        // Check authen
         if (Auth::guard('account_customer')->check()) {
             $wishlists = Wishlist::where('customer_id', Auth::guard('account_customer')->id())->get();
         }else{
             $wishlists=null;
         }
+
+        // Comment
         $comments=Comment::all();
+        
+
         return view('user.page.home.index', compact('comments','wishlists','logos','categorys','cate','hot_deals', 'dong_ho',
             'product_tag','old_phone','sliders','products','featured_phone','phu_kien','featured_laptop', 'blogs', 'firsts','employee','empcategory'));
     }
