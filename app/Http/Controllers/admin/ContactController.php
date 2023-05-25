@@ -9,11 +9,6 @@ use Session;
 use App\Classes\Helper;
 class ContactController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function __construct()
     {
         $this->middleware('CheckAdminLogin');

@@ -24,8 +24,7 @@
         <div class="contact-page">
             <div class="row">
                 <div style="width: 100%;padding: 0px 15px;">
-                    <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                            src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=10.7715174,106.70159678893364+(Flipmart)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.256043057065!2d106.05742777443204!3d20.94223039074651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a30555555555%3A0x39a8acd006ab8e69!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTxrAgUGjhuqFtIEvhu7kgVGh14bqtdCBIxrBuZyBZw6puLCBDxqEgc-G7nyAy!5e0!3m2!1svi!2s!4v1684971042377!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <a href="https://www.maps.ie/draw-radius-circle-map/"></a></div>
 
 
@@ -91,15 +90,15 @@
                     </div>
                     <div class="clearfix address">
                         <span class="contact-i"><i class="fa fa-map-marker"></i></span>
-                        <span class="contact-span">Nhà B, 65 Đường Huỳnh Thúc Kháng, Bến Nghé, Quận 1, Thành phố Hồ Chí Minh</span>
+                        <span class="contact-span">Thôn Chi Long, xã Ngọc Long, huyện Yên Mỹ, tỉnh Hưng Yên</span>
                     </div>
                     <div class="clearfix phone-no">
                         <span class="contact-i"><i class="fa fa-mobile"></i></span>
-                        <span class="contact-span">+(84) 91.1150.326<br>+(84) 32.7355.517</span>
+                        <span class="contact-span">0922002360<br>0877962002</span>
                     </div>
                     <div class="clearfix email">
                         <span class="contact-i"><i class="fa fa-envelope"></i></span>
-                        <span class="contact-span"><a href="#">tlmobile@tlmobile.top</a></span>
+                        <span class="contact-span"><a href="#">luyenhaidangit@gmail.com</a></span>
                     </div>
                 </div>
             </div><!-- /.contact-page -->

@@ -212,6 +212,8 @@ Route::group(['prefix' => '', 'namespace' => 'user'], function () {
     Route::get('tin-tuc/bai-viet/{id}', 'BlogController@blogdetail')->name('shopping.blog-detail');
     // Faq
     Route::get('1-van-cau-hoi-vi-sao', 'FaqController@index')->name('shopping.faq');
+    // Contact
+    Route::get('Lien-he', 'ContactController@showForm')->name('shopping.contact');
 });
 
 
